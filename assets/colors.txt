@@ -1,5 +1,0 @@
-SAPPHIRE	#0908e3		Azul vibrante (royal)
-COSMIC		#0c34e9		Azul escuro intenso
-MIDNIGHT	#050170		Azul marinho fechado
-ELECTRIC	#1586f5		Azul claro brilhante
-DEPTH		#01001c		Azul profundo (quase preto)
