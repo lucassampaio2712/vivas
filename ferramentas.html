@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferramentas</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="assets/png/logo-web.png">
+    <style>
+:root {
+    --sapphire: #0908e3;
+    --cosmic: #0c34e9;
+    --midnight: #050170;
+    --electric: #1586f5;
+    --depth: #01001c;
+    --font-main: 'JetBrains Mono', monospace;
+}
+
+body {
+    background-color: var(--depth);
+    color: var(--electric);
+    font-family: var(--font-main);
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* Container Principal */
+.main-container {
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.system-interface {
+    width: 100%;
+    max-width: 1000px;
+    border: 1px solid var(--midnight);
+    padding: 20px;
+    position: relative;
+    background: linear-gradient(180deg, rgba(5, 1, 112, 0.05) 0%, rgba(1, 0, 28, 0) 100%);
+}
+
+/* Header e Efeito Glitch sutil */
+.section-header {
+    border-bottom: 2px solid var(--sapphire);
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+}
+
+.status-line {
+    display: flex;
+    align-items: center;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    color: var(--sapphire);
+}
+
+.blink-dot {
+    height: 8px;
+    width: 8px;
+    background-color: var(--electric);
+    border-radius: 50%;
+    margin-right: 10px;
+    animation: blink 1s infinite;
+    box-shadow: 0 0 10px var(--electric);
+}
+
+.glitch-text {
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 10px 0;
+    position: relative;
+    color: var(--electric);
+}
+
+/* Grid de Ferramentas */
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.category-title {
+    font-size: 1rem;
+    color: var(--sapphire);
+    margin-bottom: 20px;
+    border-left: 3px solid var(--sapphire);
+    padding-left: 10px;
+}
+
+/* Cards de Ferramentas */
+.cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.tool-card {
+    background: var(--midnight);
+    padding: 15px;
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+    cursor: crosshair;
+}
+
+.tool-card:hover {
+    border-color: var(--electric);
+    background: var(--cosmic);
+    transform: translateX(10px);
+    box-shadow: -5px 0px 0px var(--electric);
+}
+
+.tool-card i {
+    font-size: 1.5rem;
+    color: var(--electric);
+}
+
+.tool-card span {
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Barra de Sincronia (Progresso) */
+.sync-bar {
+    grid-column: 1 / span 2;
+    height: 4px;
+    background: var(--depth);
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--sapphire), var(--electric));
+    box-shadow: 0 0 10px var(--electric);
+    width: 0; /* Começa em zero para animarmos com JS ou hover */
+    transition: width 1.5s cubic-bezier(0.1, 1, 0.1, 1);
+}
+
+.tool-card:hover .fill {
+    filter: brightness(1.2);
+}
+
+/* Rodapé do Sistema e Scanline */
+.system-footer {
+    margin-top: 40px;
+    font-size: 0.6rem;
+    color: var(--sapphire);
+    text-align: right;
+    border-top: 1px solid var(--midnight);
+    padding-top: 10px;
+}
+
+.scan-line {
+    width: 100%;
+    height: 2px;
+    background: rgba(21, 134, 245, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 10;
+    animation: scan 4s linear infinite;
+}
+
+/* Animações */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+@keyframes scan {
+    0% { top: -10%; }
+    100% { top: 110%; }
+}
+    </style>
+</head>
+<body class="projects-page">
+    <nav class="navbar">
+            
+            <header class="nav-logo">
+                <a class="item" href="index.html"><img src="assets/png/logo-web.png" alt="Logo Vivaz Design"></a>
+                <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+                    <img class="item" src="assets/png/menu.png" alt="menu">
+                </button>
+            </header>
+
+            <div class="nav-items">
+                <a class="item" href="projects.html">// Projetos</a>
+                <a class="item" href="servicos.html">// Serviços</a>
+                <a class="item" href="ferramentas.html">// Ferramentas</a>
+                <a class="item" href="sobre-mim.html">// Sobre mim</a>
+                <a class="item" href="contato.html">// Contato</a>
+            </div>
+        </nav>
+            
+            <a href="https://wa.me/11944920237" target="_blank"><div class="whatsapp-bubble">Começe seu site aqui!</div></a>
+            <a href="https://wa.me/11944920237" target="_blank" class="whatsapp-btn">
+                <img id="wttzp" src="assets/png/wttzp.png" alt="wttzp">
+            </a>
+            <main class="main-container">
+    <section id="tools-section" class="system-interface">
+        
+        <header class="section-header">
+            <div class="status-line">
+                <span class="blink-dot"></span>
+                <p>STATUS: SISTEMA OPERACIONAL // NÍVEL DE ACESSO: DESENVOLVEDOR</p>
+            </div>
+            <h2 class="glitch-text" data-text="ARSENAL_TECNOLÓGICO">[ ARSENAL_TECNOLÓGICO ]</h2>
+        </header>
+
+        <div class="tools-grid">
+            
+            <article class="tool-category">
+                <h3 class="category-title"><i class="fas fa-code-branch"></i> INTERFACE_MODULES</h3>
+                <div class="cards-container">
+                    <div class="tool-card">
+                        <i class="fab fa-html5"></i>
+                        <span>HTML5</span>
+                        <div class="sync-bar"><div class="fill" style="width: 95%;"></div></div>
+                    </div>
+                    <div class="tool-card">
+                        <i class="fab fa-css3-alt"></i>
+                        <span>CSS3</span>
+                        <div class="sync-bar"><div class="fill" style="width: 85%;"></div></div>
+                    </div>
+                    <div class="tool-card">
+                        <i class="fab fa-js-square"></i>
+                        <span>JAVASCRIPT</span>
+                        <div class="sync-bar"><div class="fill" style="width: 80%;"></div></div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="tool-category">
+                <h3 class="category-title"><i class="fas fa-microchip"></i> LOGIC_CORES</h3>
+                <div class="cards-container">
+                    <div class="tool-card">
+                        <i class="fab fa-node-js"></i>
+                        <span>NODE.JS</span>
+                        <div class="sync-bar"><div class="fill" style="width: 75%;"></div></div>
+                    </div>
+                    <div class="tool-card">
+                        <i class="fab fa-python"></i>
+                        <span>PYTHON</span>
+                        <div class="sync-bar"><div class="fill" style="width: 70%;"></div></div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="tool-category">
+                <h3 class="category-title"><i class="fas fa-terminal"></i> SUPPORT_PROTOCOLS</h3>
+                <div class="cards-container">
+                    <div class="tool-card">
+                        <i class="fab fa-git-alt"></i>
+                        <span>GIT_HUB</span>
+                        <div class="sync-bar"><div class="fill" style="width: 90%;"></div></div>
+                    </div>
+                    <div class="tool-card">
+                        <i class="fab fa-docker"></i>
+                        <span>DOCKER</span>
+                        <div class="sync-bar"><div class="fill" style="width: 60%;"></div></div>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <footer class="system-footer">
+            <div class="scan-line"></div>
+            <p>CONEXÃO_ESTABELECIDA // LATÊNCIA: 12ms // LOCAL: SUB_REDE_PORTFOLIO</p>
+        </footer>
+
+    </section>
+</main>
+        <script src="script.js"></script>
+</body>
+</html>
