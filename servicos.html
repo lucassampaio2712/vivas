@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicos</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="assets/png/logo-web.png">
+    <style>
+        /* --- GRID DE SERVIÇOS --- */
+.services-container {
+    padding: 60px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.service-node {
+    background: rgba(0, 43, 77, 0.1);
+    border: 1px solid var(--matrix-blue);
+    padding: 30px;
+    position: relative;
+    transition: all 0.4s ease;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 90% 100%, 0 100%);
+}
+
+.service-node::before {
+    content: attr(data-node);
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-family: var(--font-mono);
+    font-size: 2rem;
+    color: var(--matrix-blue);
+    opacity: 0.2;
+}
+
+.service-node:hover {
+    background: rgba(21, 134, 245, 0.1);
+    box-shadow: 0 0 20px var(--blue-glow);
+    transform: translateY(-5px);
+}
+
+.node-header {
+    border-bottom: 1px solid var(--matrix-blue);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+.node-header h3 {
+    font-family: var(--font-mono);
+    color: white;
+    letter-spacing: 2px;
+}
+
+.node-status {
+    font-size: 0.6rem;
+    color: var(--matrix-blue);
+    display: block;
+    margin-top: 5px;
+}
+
+.node-specs {
+    list-style: none;
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    font-family: var(--font-mono);
+}
+
+.node-specs li {
+    margin-bottom: 5px;
+    transition: color 0.3s;
+}
+
+.service-node:hover .node-specs li {
+    color: var(--matrix-blue);
+}
+.progress-container {
+    margin-top: 25px;
+    width: 100%;
+}
+
+.progress-line {
+    width: 0%; /* Começa em 0 */
+    height: 3px;
+    background: var(--matrix-blue);
+    box-shadow: 0 0 10px var(--matrix-blue), 0 0 20px rgba(21, 134, 245, 0.5);
+    position: relative;
+    transition: width 2s cubic-bezier(0.22, 1, 0.36, 1); /* Animação fluida */
+}
+
+.loading-text {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--matrix-blue);
+    margin-top: 8px;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+    </style>
+</head>
+<body class="projects-page">
+
+    <main class="cyber-interface">
+        <nav class="navbar">
+            
+            <header class="nav-logo">
+                <a class="item" href="index.html"><img src="assets/png/logo-web.png" alt="Logo Vivaz Design"></a>
+                <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+                    <img class="item" src="assets/png/menu.png" alt="menu">
+                </button>
+            </header>
+
+            <div class="nav-items">
+                <a class="item" href="projects.html">// Projetos</a>
+                <a class="item" href="servicos.html">// Serviços</a>
+                <a class="item" href="ferramentas.html">// Ferramentas</a>
+                <a class="item" href="sobre-mim.html">// Sobre mim</a>
+                <a class="item" href="contato.html">// Contato</a>
+            </div>
+        </nav>
+            
+            <a href="https://wa.me/11944920237" target="_blank"><div class="whatsapp-bubble">Começe seu site aqui!</div></a>
+            <a href="https://wa.me/11944920237" target="_blank" class="whatsapp-btn">
+                <img id="wttzp" src="assets/png/wttzp.png" alt="wttzp">
+            </a>
+<main class="services-container">
+    <section class="hero-text">
+        <span class="subtitle">CAPACIDADES_DO_SISTEMA</span>
+        <h1 class="glitch-title" data-text="SERVIÇOS">SERVIÇOS</h1>
+    </section>
+
+    <div class="services-grid">
+        <div class="service-node" data-node="01">
+            <div class="node-header">
+                <h3>ESTRATÉGIA DE CONVERSÃO (UX)</h3>
+                <span class="node-status">PROTOCOL: ACTIVE</span>
+            </div>
+            <p>Não entregamos apenas beleza, entregamos resultados. O foco aqui é funcionalidade: um site onde cada clique foi planejado para vender.</p>
+            <ul class="node-specs">
+                <li>// ARQUITETURA_DE_DADOS</li>
+                <li>// USER_FLOW_MAPPING</li>
+                <li>// WIREFRAMING_ESTRUTURAL</li>
+            </ul>
+        </div>
+
+        <div class="service-node" data-node="02">
+            <div class="node-header">
+                <h3>DESIGN DE INTERFACE (UI)</h3>
+                <span class="node-status">PROTOCOL: ACTIVE</span>
+            </div>
+            <p>Criamos uma identidade visual digital moderna e sofisticada, alinhada ao posicionamento do seu negócio. O objetivo é gerar impacto imediato e autoridade.</p>
+            <ul class="node-specs">
+                <li>// VISUAL_SYNTHESIS</li>
+                <li>// PROTOTIPAGEM_INTERATIVA</li>
+                <li>// DESIGN_RESPONSIVO</li>
+            </ul>
+        </div>
+    <div class="service-node" data-node="03">
+            <div class="node-header">
+                <h3>PERFORMANCE E VELOCIDADE</h3>
+                <span class="node-status">PROTOCOL: ACTIVE</span>
+            </div>
+            <p>Em um mundo acelerado, cada segundo de carregamento conta. Um site rápido não apenas melhora a experiência do usuário, mas também evita que você perca dinheiro por desistências no carregamento.</p>
+            <ul class="node-specs">
+                <li>// VISUAL_SYNTHESIS</li>
+                <li>// PROTOTIPAGEM_INTERATIVA</li>
+                <li>// DESIGN_RESPONSIVO</li>
+            </ul>
+
+        </div>
+        <div class="service-node" data-node="04">
+            <div class="node-header">
+                <h3>DESIGN PARA QUALQUER TELA</h3>
+                <span class="node-status">PROTOCOL: ACTIVE</span>
+            </div>
+            <p>Seu cliente está no celular, no tablet e no computador. Adaptamos o conteúdo para que a experiência de compra seja tão fluida em uma tela de 6 polegadas quanto em um monitor de última geração.</p>
+            <ul class="node-specs">
+                <li>// VISUAL_SYNTHESIS</li>
+                <li>// PROTOTIPAGEM_INTERATIVA</li>
+                <li>// DESIGN_RESPONSIVO</li>
+            </ul>
+
+        </div>
+        <div class="service-node" data-node="05">
+            <div class="node-header">
+                <h3>SEO TÉCNICO</h3>
+                <span class="node-status">PROTOCOL: ACTIVE</span>
+            </div>
+            <p>Implementamos as melhores práticas de SEO (Search Engine Optimization) diretamente na estrutura do código. Isso significa que seu site nasce "amigo do Google", facilitando o rankeamento orgânico e colocando sua marca na frente de quem já está procurando pelo seu serviço.</p>
+            <ul class="node-specs">
+                <li>// VISUAL_SYNTHESIS</li>
+                <li>// PROTOTIPAGEM_INTERATIVA</li>
+                <li>// DESIGN_RESPONSIVO</li>
+            </ul>
+
+        </div>
+        <div class="service-node" data-node="06">
+            <div class="node-header">
+                <h3>GESTÃO DESCOMPLICADA</h3>
+                <span class="node-status">PROTOCOL: ACTIVE</span>
+            </div>
+            <p>Um projeto que evolui com você. Oferecemos suporte total pós-entrega com alterações resolvidas em tempo recorde. Você ganha autonomia e economia, sem precisar contratar técnicos para cada detalhe.</p>
+            <ul class="node-specs">
+                <li>// VISUAL_SYNTHESIS</li>
+                <li>// PROTOTIPAGEM_INTERATIVA</li>
+                <li>// DESIGN_RESPONSIVO</li>
+            </ul>
+
+</div>
+                    
+        </div>
+        
+</main>
+
+    <script src="script.js"></script>
+</body>
+</html>
